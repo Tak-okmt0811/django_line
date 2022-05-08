@@ -13,9 +13,16 @@ from line_bot_ai.line_message import LineMessage
 def index(request):
     if request.method == 'POST':
         request = json.loads(request.body.decode('utf-8'))
+        print(request)
         data = request['events'][0]
+        print(data)
         message = data['message']
+        print(message)
         reply_token = data['replyToken']
+        print(reply_token)
         line_message = LineMessage(message_creater.create_single_text_message(message['text']))
+        print(line_message)
         line_message.reply(reply_token)
+        print('終了')
         return HttpResponse("ok")
+

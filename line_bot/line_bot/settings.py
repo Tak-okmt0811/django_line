@@ -25,8 +25,15 @@ SECRET_KEY = 'django-insecure-_0=ab49#+z%et76hvxti-__qy6+a*n9g31xptb8)z-s(^urusw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"] #.ngrok.io
+#【追加】挿入画像のルート指定
+MEDIA_URL = '/media/'
+if DEBUG:
+    MEDIA_ROOT = BASE_DIR / 'media' #ローカル環境時の指定
+else:
+    MEDIA_ROOT = f'/var/www/{BASE_DIR.name}/media' #本番環境時の指定
 
+
+ALLOWED_HOSTS = ["*"] #.ngrok.io
 
 # Application definition
 
@@ -37,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'line_bot_ai.apps.LineBotAiConfig' #追加
 ]
 
 MIDDLEWARE = [
@@ -123,3 +131,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
