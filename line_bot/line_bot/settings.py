@@ -32,8 +32,7 @@ if DEBUG:
 else:
     MEDIA_ROOT = f'/var/www/{BASE_DIR.name}/media' #本番環境時の指定
 
-
-ALLOWED_HOSTS = ["*"] #.ngrok.io
+ALLOWED_HOSTS = ["127.0.0.1",".ngrok.io"] #* ,
 
 # Application definition
 
