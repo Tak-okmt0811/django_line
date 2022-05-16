@@ -8,3 +8,7 @@ class Images(models.Model):
 
     def __str__(self):
         return self.title
+
+# class Data(models.Model):
+#     data = models.CharField(max_length=255,null=True)
+#     date = models.DateTimeField(auto_now_add=True)

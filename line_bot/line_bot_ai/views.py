@@ -15,15 +15,16 @@ def index(request):
         request = json.loads(request.body.decode('utf-8'))
         data = request['events'][0]
         message = data['message']
+        print('プリント')
+        print(message['text'])
         reply_token = data['replyToken']
-        
-        # 【ここに条件文を記載】
-        if message['text'] == 'できたー':
-            message = 'うほほほほ'
-            line_message = LineMessage(message_creater.single_message(message))
-        else:
-            line_message = LineMessage(message_creater.create_single_text_message(message['text']))
-        
+        # 呼び出すキーワードによってテンプレートメッセージを変える
+        if message['text'] == 'メニュー':
+            line_message = LineMessage(message_creater.create_single_text_message(message['text'])) 
+        elif message['text'] == 'Plan A':
+            line_message = LineMessage(message_creater.confirm_message(message['text']))
+
+
         line_message.reply(reply_token)
         return HttpResponse("ok")
 
