@@ -130,16 +130,14 @@ def confirm_message(message):
     return message
 
 #テストメッセージ（おうむ返し）==============================================
-# def single_message(message):
-#     # if message == 'こんにちは':
-#     #     message = 'こんちゃす'
-#     test_message = [
-#                 {
-#                     'type': 'text',
-#                     'text': message
-#                 }
-#             ]
-#     return test_message
+def single_message(message):
+    message = [
+                {
+                    'type': 'text',
+                    'text': message
+                }
+            ]
+    return message
 
 
 #動画カルーセルテンプレート==============================================
