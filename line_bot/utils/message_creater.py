@@ -1,4 +1,4 @@
-uri="https://d52f-60-66-63-238.jp.ngrok.io"
+uri="https://f3da-60-66-43-108.jp.ngrok.io"
 image01 = uri + "/media/media/img1.JPG"
 image02 = uri + "/media/media/img2.png"
 
