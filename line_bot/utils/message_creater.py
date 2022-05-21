@@ -1,10 +1,12 @@
-uri="https://f3da-60-66-43-108.jp.ngrok.io"
+uri="https://efd1-60-66-46-106.jp.ngrok.io"
 image01 = uri + "/media/media/img1.JPG"
 image02 = uri + "/media/media/img2.png"
+menu01 =  uri + "/media/media/menu01.jpg"
+menu02 =  uri + "/media/media/menu02.jpg"
+menu03 =  uri + "/media/media/menu03.jpg"
 
 #メッセージ（ボタンテンプレート ）==============================================
-def create_single_text_message(message): #message
-    #if message == 'メニュー':
+def template_button_message(message): #message
     message = [ 
                 {
                 "type": "template",
@@ -13,9 +15,9 @@ def create_single_text_message(message): #message
                     "type": "carousel",
                     "columns": [
                         {
-                            "thumbnailImageUrl": image01,
+                            "thumbnailImageUrl": menu01,
                             "imageBackgroundColor": "#FFFFFF",
-                            "title": "MENU1",
+                            "title": "this is title01",
                             "text": "description",
                             "defaultAction": {
                                 "type": "uri",
@@ -41,9 +43,9 @@ def create_single_text_message(message): #message
                             ]
                         },
                         {
-                            "thumbnailImageUrl": image01,
+                            "thumbnailImageUrl": menu02,
                             "imageBackgroundColor": "#000000",
-                            "title": "this is menu",
+                            "title": "this is title02",
                             "text": "description",
                             "defaultAction": {
                                 "type": "uri",
@@ -53,25 +55,25 @@ def create_single_text_message(message): #message
                             "actions": [
                                 {
                                     "type": "postback",
-                                    "label": "Plan A ",
+                                    "label": "Plan X ",
                                     "data": "action=buy&itemid=222"
                                 },
                                 {
                                     "type": "postback",
-                                    "label": "Plan B",
+                                    "label": "Plan Y",
                                     "data": "action=add&itemid=222"
                                 },
                                 {
                                     "type": "uri",
-                                    "label": "Plan C",
+                                    "label": "Plan Z",
                                     "uri": "https://www.shimay.uno/nekoguruma/archives/620"
                                 }
                             ]
                         },
                         {
-                            "thumbnailImageUrl": image01,
+                            "thumbnailImageUrl": menu03,
                             "imageBackgroundColor": "#FFFFFF",
-                            "title": "this is menu",
+                            "title": "this is title03",
                             "text": "description",
                             "defaultAction": {
                                 "type": "uri",
@@ -81,17 +83,17 @@ def create_single_text_message(message): #message
                             "actions": [
                                 {
                                     "type": "postback",
-                                    "label": "Buy",
+                                    "label": "Plan Σ",
                                     "data": "action=buy&itemid=111"
                                 },
                                 {
                                     "type": "postback",
-                                    "label": "Add to cart",
+                                    "label": "Plan Γ",
                                     "data": "action=add&itemid=111"
                                 },
                                 {
                                     "type": "uri",
-                                    "label": "View detail",
+                                    "label": "Plan β",
                                     "uri": "https://www.shimay.uno/nekoguruma/archives/620"
                                 }
                             ]
@@ -116,12 +118,12 @@ def confirm_message(message):
                 {
                     "type": "message",
                     "label": "Yes",
-                    "text": "yes"
+                    "text": "Yes"
                 },
                 {
                     "type": "message",
                     "label": "No",
-                    "text": "no"
+                    "text": "No"
                 }
             ]
         }

@@ -26,8 +26,8 @@ def index(request):
 
         reply_token = data['replyToken']
   
-        if text == 'メニュー':
-            line_message = LineMessage(message_creater.create_single_text_message(text)) 
+        if text == 'menu':
+            line_message = LineMessage(message_creater.template_button_message(text)) 
 
         elif Menu.objects.filter(name = text).first(): #テンプレートで選択した項目が一つでもあると実行 (yes/No)
             # ex)Plan A入力
@@ -52,11 +52,14 @@ def index(request):
                 plan.amount +=1 #複数回押すとその分カウント 
             plan.save()
         
-        #ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+        #ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーs
 
         elif text == 'yes':
             #集計結果の確認画面表示処理
-            line_message = LineMessage(message_creater.single_message('注文を受け付けた。'))
+            line_message = LineMessage(message_creater.single_message('Done!'))
+        elif text == 'no':
+            line_message = LineMessage(message_creater.template_button_message(text)) 
+
 
         # elif text == 'Plan A':
         #-db save の記載----
