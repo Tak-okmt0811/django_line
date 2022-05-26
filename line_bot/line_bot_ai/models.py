@@ -28,15 +28,16 @@ class Menu(models.Model): #MENU
 
 # lineからの入力値を保存するdB
 class Id(models.Model): 
-    user_id = models.CharField(max_length=100,unique=True) #ID
+    user_id = models.CharField(max_length=100, unique=True) #ID
     date = models.DateTimeField(default=timezone.now) #date
     status = models.SmallIntegerField(default=0)
     # text = models.CharField(max_length=255,null=True) #入力値 
 
-    # def __str__(self):
-    #     return self.user_id
+    def __str__(self):
+        return self.user_id
 
 class Plan(models.Model): #Plan
-    plan = models.ForeignKey(to=Menu,null=True,on_delete=models.SET_NULL) #
+    order = models.ForeignKey(to=Id, on_delete=models.CASCADE)
+    plan = models.ForeignKey(to=Menu,null=True, on_delete=models.SET_NULL)
     amount = models.SmallIntegerField(default=0)
-    order = models.ForeignKey(to=Id,on_delete=models.CASCADE)
+

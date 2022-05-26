@@ -1,4 +1,4 @@
-uri="https://efd1-60-66-46-106.jp.ngrok.io"
+uri="https://7865-60-66-60-248.jp.ngrok.io"
 image01 = uri + "/media/media/img1.JPG"
 image02 = uri + "/media/media/img2.png"
 menu01 =  uri + "/media/media/menu01.jpg"
@@ -54,19 +54,19 @@ def template_button_message(message): #message
                             },
                             "actions": [
                                 {
-                                    "type": "postback",
-                                    "label": "Plan X ",
-                                    "data": "action=buy&itemid=222"
+                                    "type": "message",
+                                    "label": "Plan X",
+                                    "text": "Plan X"
                                 },
                                 {
-                                    "type": "postback",
+                                    "type": "message",
                                     "label": "Plan Y",
-                                    "data": "action=add&itemid=222"
+                                    "text": "Plan Y"
                                 },
                                 {
-                                    "type": "uri",
+                                    "type": "message",
                                     "label": "Plan Z",
-                                    "uri": "https://www.shimay.uno/nekoguruma/archives/620"
+                                    "text": "Plan Z"
                                 }
                             ]
                         },
@@ -82,19 +82,19 @@ def template_button_message(message): #message
                             },
                             "actions": [
                                 {
-                                    "type": "postback",
+                                    "type": "message",
                                     "label": "Plan Σ",
-                                    "data": "action=buy&itemid=111"
+                                    "text": "Plan Σ"
                                 },
                                 {
-                                    "type": "postback",
+                                    "type": "message",
                                     "label": "Plan Γ",
-                                    "data": "action=add&itemid=111"
+                                    "text": "Plan Γ"
                                 },
                                 {
-                                    "type": "uri",
+                                    "type": "message",
                                     "label": "Plan β",
-                                    "uri": "https://www.shimay.uno/nekoguruma/archives/620"
+                                    "text": "Plan β"
                                 }
                             ]
                         },
@@ -152,3 +152,11 @@ def single_message(message):
 #             "trackingId": "track-id"
 #         }
 #     ]
+
+
+#template_messageのアクションでタップでurlへ移動
+# {
+# "type": "uri",
+# "label": "Plan β",
+# "uri": "https://www.shimay.uno/nekoguruma/archives/620"
+# }

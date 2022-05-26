@@ -1,4 +1,3 @@
-from re import I
 from django.shortcuts import render
 
 # Create your views here.
@@ -36,7 +35,7 @@ def index(request):
             # 【dBの処理】 入力値の保存ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
 
             # ① dB上のid有無の判定
-            id = Id.objects.filter(user_id = user_Id, status=0).first() 
+            id = Id.objects.filter(user_id = user_Id, status=0).first() #statusは現状未実装【0:注文受付中,1:手配中,2:完了】
             print(id) #->True o None 
             if not id: 
                 id = Id(user_id = user_Id) #なければ 変数order に格納
@@ -54,22 +53,24 @@ def index(request):
         
         #ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーs
 
-        elif text == 'yes':
+        elif text == 'Yes':
             #集計結果の確認画面表示処理
             line_message = LineMessage(message_creater.single_message('Done!'))
-        elif text == 'no':
+
+        elif text == 'No':
             line_message = LineMessage(message_creater.template_button_message(text)) 
 
-
-        # elif text == 'Plan A':
-        #-db save の記載----
-            #1.user_id , 2.text , 3.date
-            # save_data = Data(user_id = user_Id , text = text , date=timezone.now()) 
-            # save_data.save()
-            # Data.objects.all()
-            #------------------
-            
+        else:
+            line_message = LineMessage(message_creater.single_message('Please choose from the options')) 
 
         line_message.reply(reply_token)
         return HttpResponse("ok")
 
+# elif text == 'Plan A':
+#-db save の記載----
+#1.user_id , 2.text , 3.date
+# save_data = Data(user_id = user_Id , text = text , date=timezone.now()) 
+# save_data.save()
+# Data.objects.all()
+#------------------
+            
