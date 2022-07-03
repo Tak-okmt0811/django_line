@@ -1,4 +1,4 @@
-uri="https://7865-60-66-60-248.jp.ngrok.io"
+uri="https://49a8-126-159-203-136.jp.ngrok.io"
 image01 = uri + "/media/media/img1.JPG"
 image02 = uri + "/media/media/img2.png"
 menu01 =  uri + "/media/media/menu01.jpg"
@@ -22,7 +22,7 @@ def template_button_message(message): #message
                             "defaultAction": {
                                 "type": "uri",
                                 "label": "View detail",
-                                "uri": "https://www.shimay.uno/nekoguruma/archives/620"
+                                "uri": "https://djangohp.herokuapp.com/"
                             },
                             "actions": [
                                 {
@@ -50,7 +50,7 @@ def template_button_message(message): #message
                             "defaultAction": {
                                 "type": "uri",
                                 "label": "View detail",
-                                "uri": "https://www.shimay.uno/nekoguruma/archives/620"
+                                "uri": "https://djangohp.herokuapp.com/home/"
                             },
                             "actions": [
                                 {
@@ -78,7 +78,7 @@ def template_button_message(message): #message
                             "defaultAction": {
                                 "type": "uri",
                                 "label": "View detail",
-                                "uri": "https://www.shimay.uno/nekoguruma/archives/620"
+                                "uri": "https://djangohp.herokuapp.com/"
                             },
                             "actions": [
                                 {

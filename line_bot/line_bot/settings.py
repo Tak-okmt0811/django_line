@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'line_bot_ai.apps.LineBotAiConfig' #追加
+    'line_bot_ai.apps.LineBotAiConfig', #追加
+    'import_export' #追加
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,8 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# 管理サイトでのインポート機能は権限が必要と設定する
+IMPORT_EXPORT_IMPORT_PERMISSION_CODE = 'change' #追加
+
+#DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240 # 追加
